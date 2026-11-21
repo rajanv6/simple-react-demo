@@ -1,0 +1,172 @@
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px; /* Scaled up outer breathing room */
+}
+
+/* Form container styling - Scaled up maximum width and breathing room */
+.form-container {
+    background-color: #ffffff;
+    padding: 45px; /* Increased from 30px */
+    border-radius: 12px; /* Smoother corner profile */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 800px; /* Scaled up from 600px */
+}
+
+/* Form Heading - Scaled up title size */
+.form-container h2 {
+    margin-bottom: 35px; /* Increased from 25px */
+    color: #333333;
+    text-align: center;
+    font-size: 32px; /* Increased from 24px */
+    font-weight: 700;
+}
+
+/* Grid system rows - Expanded column gap */
+.form-row {
+    display: flex;
+    gap: 30px; /* Increased from 20px */
+}
+
+/* Row-to-row layout spacing */
+.form-group {
+    margin-bottom: 28px; /* Increased from 20px */
+}
+
+/* Proportion layout columns */
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+
+/* Scaled up absolute dimensions for custom fields */
+.size-small { width: 140px; }  /* Increased from 100px */
+.size-medium { width: 200px; } /* Increased from 150px */
+
+/* Form Labels - Enlarged type scale */
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555555;
+    font-weight: 600;
+    font-size: 16px; /* Increased from 14px */
+}
+
+/* Form Input Elements - Scaled up internal heights, text size, and padding */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 16px; /* Increased from 12px */
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 18px; /* Increased from 16px */
+    color: #222222;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Strip default counter arrows on numeric text fields */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15); /* Modern focus glow */
+    outline: none;
+}
+
+/* Radio Button Layouts - Height adjusted to perfectly map larger input boxes */
+.radio-group {
+    display: flex;
+    gap: 30px; /* Increased from 20px */
+    height: 56px; /* Matches the scaled vertical height of text inputs */
+    align-items: center; 
+}
+
+/* Radio Choice Typography Scale */
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 18px; /* Match form input font scaling */
+    font-weight: normal !important;
+    cursor: pointer;
+    color: #333333;
+}
+
+/* Expanded clickable target size for custom radios */
+.radio-label input {
+    margin-right: 10px;
+    transform: scale(1.25); /* Blows up the radio bubble selector size */
+    cursor: pointer;
+}
+
+/* Submit Action Button - High contrast, expanded dimensions */
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;          
+}
+
+.submit-btn,
+.reset-btn {
+    flex: 1;                   /* replaces width: 100%, both share the row equally */
+    padding: 18px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+.submit-btn:hover { background-color: #0056b3; }
+
+.reset-btn {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #888;
+}
+.reset-btn:hover { background-color: #f0f0f0; }
+
+.submit-btn:active,
+.reset-btn:active { transform: scale(0.99); }
+
+
+/* Clean collapse for standard mobile screen displays */
+@media (max-width: 650px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .size-small, .size-medium {
+        width: 100%;
+    }
+    .radio-group {
+        height: auto;
+        padding: 10px 0 20px 0;
+        flex-wrap: wrap; /* Wraps items cleanly if mobile is very narrow */
+    }
+}
